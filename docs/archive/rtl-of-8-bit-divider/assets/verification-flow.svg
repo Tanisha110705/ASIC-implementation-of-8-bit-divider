@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="430" viewBox="0 0 1000 430" role="img" aria-label="Verification flow">
+<title>Verification flow</title>
+<defs><marker id="ad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1d4e89"/></marker><marker id="ac" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b45309"/></marker><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f2933"/></marker><marker id="am" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a94a3"/></marker></defs>
+<rect x="0" y="0" width="1000" height="430" fill="#ffffff"/>
+<text x="500.0" y="32" font-family="Helvetica, Arial, sans-serif" font-size="18" text-anchor="middle" font-weight="bold" fill="#1f2933" >Verification flow for eight_bit_divider</text>
+<text x="500.0" y="54" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#8a94a3" >Dynamic: gate-level simulation with SDF back-annotation · Static: logical equivalence checking</text>
+<rect x="30" y="90" width="200" height="120" rx="6" fill="#eef3f9" stroke="#1d4e89" stroke-width="1.5"/>
+<text x="130.0" y="114" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#1f2933" >tb_eight_bit_divider</text>
+<text x="130.0" y="133" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1d4e89" >Directed stimulus</text>
+<text x="130.0" y="152" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >6 operand pairs</text>
+<text x="130.0" y="169" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >incl. y = 1 and y = 0</text>
+<text x="130.0" y="186" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >10 ns clock, start pulse</text>
+<rect x="280" y="90" width="200" height="120" rx="6" fill="#eef3f9" stroke="#1d4e89" stroke-width="1.5"/>
+<text x="380.0" y="114" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#1f2933" >DUT: gate-level netlist</text>
+<text x="380.0" y="133" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1d4e89" >Genus netlist</text>
+<text x="380.0" y="152" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >$sdf_annotate</text>
+<text x="380.0" y="169" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >delays.sdf, MAXIMUM</text>
+<text x="380.0" y="186" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" ></text>
+<rect x="530" y="90" width="200" height="120" rx="6" fill="#eef3f9" stroke="#1d4e89" stroke-width="1.5"/>
+<text x="630.0" y="114" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#1f2933" >Observation</text>
+<text x="630.0" y="133" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1d4e89" >$display + SimVision</text>
+<text x="630.0" y="152" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >q, p, done per test</text>
+<text x="630.0" y="169" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >clk→done 47 ps</text>
+<text x="630.0" y="186" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >clk→q/p 125 ps</text>
+<rect x="780" y="90" width="190" height="120" rx="6" fill="#eef3f9" stroke="#1d4e89" stroke-width="1.5"/>
+<text x="875.0" y="114" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#1f2933" >Check</text>
+<text x="875.0" y="133" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1d4e89" >Manual comparison</text>
+<text x="875.0" y="152" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >q = x / y, p = x % y</text>
+<text x="875.0" y="169" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >6 / 6 match</text>
+<text x="875.0" y="186" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >(not self-checking)</text>
+<line x1="230" y1="150" x2="278" y2="150" stroke="#1d4e89" stroke-width="1.6" marker-end="url(#ad)"/>
+<line x1="480" y1="150" x2="528" y2="150" stroke="#1d4e89" stroke-width="1.6" marker-end="url(#ad)"/>
+<line x1="730" y1="150" x2="778" y2="150" stroke="#1d4e89" stroke-width="1.6" marker-end="url(#ad)"/>
+<rect x="30" y="270" width="200" height="100" rx="6" fill="#eef3f9" stroke="#1d4e89" stroke-width="1.5"/>
+<text x="130.0" y="294" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#1f2933" >Golden</text>
+<text x="130.0" y="313" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1d4e89" >fv_map.v.gz</text>
+<text x="130.0" y="332" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >Genus intermediate</text>
+<text x="130.0" y="349" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >mapped netlist</text>
+<rect x="280" y="270" width="200" height="100" rx="6" fill="#eef3f9" stroke="#1d4e89" stroke-width="1.5"/>
+<text x="380.0" y="294" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#1f2933" >Revised</text>
+<text x="380.0" y="313" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1d4e89" >divider_netlist.v</text>
+<text x="380.0" y="332" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >final synthesized</text>
+<text x="380.0" y="349" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >netlist</text>
+<rect x="530" y="270" width="200" height="100" rx="6" fill="#eef3f9" stroke="#1d4e89" stroke-width="1.5"/>
+<text x="630.0" y="294" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#1f2933" >Conformal LEC</text>
+<text x="630.0" y="313" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1d4e89" >set system mode lec</text>
+<text x="630.0" y="332" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >add compared point -all</text>
+<text x="630.0" y="349" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >compare</text>
+<rect x="780" y="270" width="190" height="100" rx="6" fill="#eef3f9" stroke="#1d4e89" stroke-width="1.5"/>
+<text x="875.0" y="294" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#1f2933" >Result</text>
+<text x="875.0" y="313" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1d4e89" >PASS</text>
+<text x="875.0" y="332" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >64 EQ (17 PO + 47 DFF)</text>
+<text x="875.0" y="349" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >0 non-EQ / abort / uncompared</text>
+<path d="M130,370 V395 H630 V372" fill="none" stroke="#1d4e89" stroke-width="1.6" marker-end="url(#ad)"/>
+<line x1="480" y1="320" x2="528" y2="320" stroke="#1d4e89" stroke-width="1.6" marker-end="url(#ad)"/>
+<line x1="730" y1="320" x2="778" y2="320" stroke="#1d4e89" stroke-width="1.6" marker-end="url(#ad)"/>
+</svg>

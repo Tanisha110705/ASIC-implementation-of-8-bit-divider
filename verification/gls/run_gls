@@ -1,0 +1,1 @@
+xrun -timescale 1ns/10ps -f filelist_gls -access +rwc -gui

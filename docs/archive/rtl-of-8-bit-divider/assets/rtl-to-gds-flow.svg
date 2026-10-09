@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600" role="img" aria-label="Implementation flow and evidence status">
+<title>Implementation flow and evidence status</title>
+<defs><marker id="ad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1d4e89"/></marker><marker id="ac" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b45309"/></marker><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f2933"/></marker><marker id="am" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a94a3"/></marker></defs>
+<rect x="0" y="0" width="1000" height="600" fill="#ffffff"/>
+<text x="500.0" y="32" font-family="Helvetica, Arial, sans-serif" font-size="18" text-anchor="middle" font-weight="bold" fill="#1f2933" >ASIC implementation flow: what the repository evidences</text>
+<text x="500.0" y="54" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#8a94a3" >Solid = evidenced by reports/screenshots in this repository · Dashed grey = no evidence in this repository</text>
+<rect x="40" y="85" width="200" height="110" rx="6" fill="#eef3f9" stroke="#1d4e89" stroke-width="1.5"/>
+<text x="140.0" y="109" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#1f2933" >Verilog RTL</text>
+<text x="140.0" y="128" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1d4e89" >HDL source</text>
+<text x="140.0" y="147" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >divider1.v → divider_registers_8bit</text>
+<text x="140.0" y="164" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >eight_bit_divider</text>
+<text x="140.0" y="181" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >(RTL files not in repo)</text>
+<rect x="290" y="85" width="260" height="110" rx="6" fill="#eef3f9" stroke="#1d4e89" stroke-width="1.5"/>
+<text x="420.0" y="109" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#1f2933" >Logic synthesis</text>
+<text x="420.0" y="128" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1d4e89" >Cadence Genus 21.14</text>
+<text x="420.0" y="147" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >read_sdc · syn_generic/map/opt</text>
+<text x="420.0" y="164" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >clock period 650 ps</text>
+<text x="420.0" y="181" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >PVT_1P1V_0C</text>
+<rect x="600" y="85" width="170" height="110" rx="6" fill="#eef3f9" stroke="#1d4e89" stroke-width="1.5"/>
+<text x="685.0" y="109" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#1f2933" >Gate-level netlist</text>
+<text x="685.0" y="128" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1d4e89" >Genus outputs</text>
+<text x="685.0" y="147" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >write_hdl</text>
+<text x="685.0" y="164" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >write_sdc</text>
+<text x="685.0" y="181" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >write_sdf</text>
+<line x1="240" y1="140" x2="288" y2="140" stroke="#1d4e89" stroke-width="1.6" marker-end="url(#ad)"/>
+<line x1="550" y1="140" x2="598" y2="140" stroke="#1d4e89" stroke-width="1.6" marker-end="url(#ad)"/>
+<rect x="250" y="225" width="108" height="66" rx="6" fill="#ffffff" stroke="#1d4e89" stroke-width="1.5"/>
+<text x="304" y="245" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1f2933" >Baseline</text>
+<text x="304" y="263" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >300.960 area</text>
+<text x="304" y="279" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >228.343 µW</text>
+<rect x="365" y="225" width="108" height="66" rx="6" fill="#ffffff" stroke="#1d4e89" stroke-width="1.5"/>
+<text x="419" y="245" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1f2933" >+ Clock gating</text>
+<text x="419" y="263" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >305.406 area</text>
+<text x="419" y="279" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >227.119 µW</text>
+<rect x="480" y="225" width="108" height="66" rx="6" fill="#ffffff" stroke="#1d4e89" stroke-width="1.5"/>
+<text x="534" y="245" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1f2933" >PLE / spatial</text>
+<text x="534" y="263" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >335.698 area</text>
+<text x="534" y="279" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >240.109 µW</text>
+<line x1="420" y1="195" x2="420" y2="223" stroke="#1d4e89" stroke-width="1.6" marker-end="url(#ad)"/>
+<text x="250" y="311" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#8a94a3" >Three Genus runs on divider_registers_8bit; slack ≥ 0 in all (see results)</text>
+<rect x="820" y="85" width="150" height="110" rx="6" fill="#eef3f9" stroke="#1d4e89" stroke-width="1.5"/>
+<text x="895.0" y="109" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#1f2933" >GLS</text>
+<text x="895.0" y="128" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1d4e89" >Xcelium xrun</text>
+<text x="895.0" y="147" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >+ SimVision</text>
+<text x="895.0" y="164" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >SDF annotated</text>
+<text x="895.0" y="181" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >6 directed tests</text>
+<rect x="820" y="225" width="150" height="110" rx="6" fill="#eef3f9" stroke="#1d4e89" stroke-width="1.5"/>
+<text x="895.0" y="249" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#1f2933" >LEC</text>
+<text x="895.0" y="268" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1d4e89" >Cadence Conformal</text>
+<text x="895.0" y="287" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >fv_map vs netlist</text>
+<text x="895.0" y="304" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >64 / 64 equivalent</text>
+<text x="895.0" y="321" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#1f2933" >PASS</text>
+<line x1="770" y1="140" x2="818" y2="140" stroke="#1d4e89" stroke-width="1.6" marker-end="url(#ad)"/>
+<path d="M785,140 V280 H818" fill="none" stroke="#1d4e89" stroke-width="1.6" marker-end="url(#ad)"/>
+<text x="970" y="356" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#8a94a3" >GLS and LEC were run on eight_bit_divider,</text>
+<text x="970" y="372" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="end" font-weight="normal" fill="#8a94a3" >a separate Genus run whose reports are not in the repo</text>
+<text x="130" y="406" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="bold" fill="#8a94a3" >Physical implementation and signoff (no Innovus or Tempus data in this repository)</text>
+<rect x="40" y="420" width="140" height="70" rx="6" fill="#f4f5f7" stroke="#8a94a3" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="110.0" y="444" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#8a94a3" >Floorplan</text>
+<text x="110.0" y="463" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#8a94a3" >Innovus</text>
+<rect x="202" y="420" width="140" height="70" rx="6" fill="#f4f5f7" stroke="#8a94a3" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="272.0" y="444" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#8a94a3" >Power plan</text>
+<text x="272.0" y="463" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#8a94a3" >Innovus</text>
+<line x1="180" y1="455" x2="200" y2="455" stroke="#8a94a3" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#am)"/>
+<rect x="364" y="420" width="140" height="70" rx="6" fill="#f4f5f7" stroke="#8a94a3" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="434.0" y="444" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#8a94a3" >Placement</text>
+<text x="434.0" y="463" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#8a94a3" >Innovus</text>
+<line x1="342" y1="455" x2="362" y2="455" stroke="#8a94a3" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#am)"/>
+<rect x="526" y="420" width="140" height="70" rx="6" fill="#f4f5f7" stroke="#8a94a3" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="596.0" y="444" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#8a94a3" >CTS</text>
+<text x="596.0" y="463" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#8a94a3" >Innovus</text>
+<line x1="504" y1="455" x2="524" y2="455" stroke="#8a94a3" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#am)"/>
+<rect x="688" y="420" width="140" height="70" rx="6" fill="#f4f5f7" stroke="#8a94a3" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="758.0" y="444" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#8a94a3" >Routing</text>
+<text x="758.0" y="463" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#8a94a3" >Innovus</text>
+<line x1="666" y1="455" x2="686" y2="455" stroke="#8a94a3" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#am)"/>
+<rect x="850" y="420" width="140" height="70" rx="6" fill="#f4f5f7" stroke="#8a94a3" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="920.0" y="444" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#8a94a3" >Signoff STA</text>
+<text x="920.0" y="463" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#8a94a3" >Tempus</text>
+<line x1="828" y1="455" x2="848" y2="455" stroke="#8a94a3" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#am)"/>
+<path d="M685,195 V380 H110 V418" fill="none" stroke="#8a94a3" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#am)"/>
+<text x="40" y="530" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#8a94a3" >To mark these stages as completed, add the Innovus/Tempus scripts and reports (e.g. reports/physical_design/, reports/timing/)</text>
+<text x="40" y="550" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#8a94a3" >and update docs/rtl-to-gds-flow.md and docs/results.md.</text>
+</svg>

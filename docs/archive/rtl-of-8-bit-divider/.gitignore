@@ -1,0 +1,35 @@
+# Simulation (Xcelium / SimVision / Icarus)
+xcelium.d/
+INCA_libs/
+waves.shm/
+*.shm/
+*.trn
+*.dsn
+*.vcd
+*.fsdb
+*.vvp
+*.out
+xrun.history
+xrun.log
+xrun.key
+irun.*
+sdf.log
+.simvision/
+
+# Genus / Conformal / Innovus / Tempus run directories and logs
+fv/
+genus.cmd*
+genus.log*
+lec.log*
+innovus.cmd*
+innovus.log*
+tempus.cmd*
+tempus.log*
+*.rpt.old
+timingReports/
+.cadence/
+
+# Editor / OS
+*~
+*.swp
+.DS_Store

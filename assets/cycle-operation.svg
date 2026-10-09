@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1048" height="570" viewBox="0 0 1048 570" role="img" aria-label="Observed start-to-done timing, 13 / 3">
+<title>Observed start-to-done timing, 13 / 3</title>
+<defs><marker id="ad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1d4e89"/></marker><marker id="ac" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b45309"/></marker><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f2933"/></marker><marker id="am" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a94a3"/></marker></defs>
+<rect x="0" y="0" width="1048" height="570" fill="#ffffff"/>
+<text x="524.0" y="30" font-family="Helvetica, Arial, sans-serif" font-size="17" text-anchor="middle" font-weight="bold" fill="#1f2933" >Observed handshake timing: 13 ÷ 3 (redrawn from the gate-level simulation waveform)</text>
+<text x="524.0" y="52" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="normal" fill="#8a94a3" >Times from the SimVision capture; clock period 10 ns in the testbench. Gate delays (47 ps / 125 ps) are too small to draw at this scale.</text>
+<text x="136" y="125" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="end" font-weight="bold" fill="#b45309" >clk</text>
+<text x="136" y="167" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="end" font-weight="bold" fill="#b45309" >rst</text>
+<text x="136" y="209" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="end" font-weight="bold" fill="#b45309" >start</text>
+<text x="136" y="251" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="end" font-weight="bold" fill="#1d4e89" >x[7:0]</text>
+<text x="136" y="293" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="end" font-weight="bold" fill="#1d4e89" >y[7:0]</text>
+<text x="136" y="335" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="end" font-weight="bold" fill="#b45309" >done</text>
+<text x="136" y="377" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="end" font-weight="bold" fill="#1d4e89" >q[7:0]</text>
+<text x="136" y="419" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="end" font-weight="bold" fill="#1d4e89" >p[7:0]</text>
+<path d="M150.0,107 H183.0 V133 H216.0 V107 H249.0 V133 H282.0 V107 H315.0 V133 H348.0 V107 H381.0 V133 H414.0 V107 H447.0 V133 H480.0 V107 H513.0 V133 H546.0 V107 H579.0 V133 H612.0 V107 H645.0 V133 H678.0 V107 H711.0 V133 H744.0 V107 H777.0 V133 H810.0 V107 H843.0 V133 H876.0 V107 H909.0 V133 H942.0 V107 H975.0 V133 H1008.0 V107 H1008.0" fill="none" stroke="#b45309" stroke-width="1.6"/>
+<path d="M150.0,175 H1008.0" fill="none" stroke="#b45309" stroke-width="1.8"/>
+<path d="M150.0,217 H183.0 V191 H249.0 V217 H909.0 V191 H975.0 V217 H1008.0" fill="none" stroke="#b45309" stroke-width="1.8"/>
+<path d="M150.0,246 L154.0,233 H179.0 L183.0,246 L179.0,259 H154.0 Z" fill="#eef3f9" stroke="#1d4e89" stroke-width="1.4"/>
+<text x="166.5" y="251" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1d4e89" >0x00</text>
+<path d="M183.0,246 L187.0,233 H905.0 L909.0,246 L905.0,259 H187.0 Z" fill="#eef3f9" stroke="#1d4e89" stroke-width="1.4"/>
+<text x="546.0" y="251" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1d4e89" >0x0D (13)</text>
+<path d="M909.0,246 L913.0,233 H1004.0 L1008.0,246 L1004.0,259 H913.0 Z" fill="#eef3f9" stroke="#1d4e89" stroke-width="1.4"/>
+<text x="958.5" y="251" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1d4e89" >0x64</text>
+<path d="M150.0,288 L154.0,275 H179.0 L183.0,288 L179.0,301 H154.0 Z" fill="#eef3f9" stroke="#1d4e89" stroke-width="1.4"/>
+<text x="166.5" y="293" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1d4e89" >0x00</text>
+<path d="M183.0,288 L187.0,275 H905.0 L909.0,288 L905.0,301 H187.0 Z" fill="#eef3f9" stroke="#1d4e89" stroke-width="1.4"/>
+<text x="546.0" y="293" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1d4e89" >0x03 (3)</text>
+<path d="M909.0,288 L913.0,275 H1004.0 L1008.0,288 L1004.0,301 H913.0 Z" fill="#eef3f9" stroke="#1d4e89" stroke-width="1.4"/>
+<text x="958.5" y="293" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1d4e89" >0x07</text>
+<path d="M150.0,343 H810.0 V317 H942.0 V343 H1008.0" fill="none" stroke="#b45309" stroke-width="1.8"/>
+<path d="M150.0,372 L154.0,359 H806.0 L810.0,372 L806.0,385 H154.0 Z" fill="#eef3f9" stroke="#1d4e89" stroke-width="1.4"/>
+<text x="480.0" y="377" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1d4e89" >0x00</text>
+<path d="M810.0,372 L814.0,359 H938.0 L942.0,372 L938.0,385 H814.0 Z" fill="#eef3f9" stroke="#1d4e89" stroke-width="1.4"/>
+<text x="876.0" y="377" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1d4e89" >0x04</text>
+<path d="M942.0,372 L946.0,359 H1004.0 L1008.0,372 L1004.0,385 H946.0 Z" fill="#eef3f9" stroke="#1d4e89" stroke-width="1.4"/>
+<text x="975.0" y="377" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1d4e89" >0x00</text>
+<path d="M150.0,414 L154.0,401 H806.0 L810.0,414 L806.0,427 H154.0 Z" fill="#eef3f9" stroke="#1d4e89" stroke-width="1.4"/>
+<text x="480.0" y="419" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1d4e89" >0x00</text>
+<path d="M810.0,414 L814.0,401 H938.0 L942.0,414 L938.0,427 H814.0 Z" fill="#eef3f9" stroke="#1d4e89" stroke-width="1.4"/>
+<text x="876.0" y="419" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1d4e89" >0x01</text>
+<path d="M942.0,414 L946.0,401 H1004.0 L1008.0,414 L1004.0,427 H946.0 Z" fill="#eef3f9" stroke="#1d4e89" stroke-width="1.4"/>
+<text x="975.0" y="419" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1d4e89" >0x00</text>
+<line x1="216.0" y1="88" x2="216.0" y2="436" stroke="#8a94a3" stroke-width="0.8" stroke-dasharray="2 4"/>
+<text x="216.0" y="84" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1f7a3a" >E0</text>
+<line x1="282.0" y1="88" x2="282.0" y2="436" stroke="#8a94a3" stroke-width="0.8" stroke-dasharray="2 4"/>
+<text x="282.0" y="84" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1f2933" >1</text>
+<line x1="348.0" y1="88" x2="348.0" y2="436" stroke="#8a94a3" stroke-width="0.8" stroke-dasharray="2 4"/>
+<text x="348.0" y="84" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1f2933" >2</text>
+<line x1="414.0" y1="88" x2="414.0" y2="436" stroke="#8a94a3" stroke-width="0.8" stroke-dasharray="2 4"/>
+<text x="414.0" y="84" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1f2933" >3</text>
+<line x1="480.0" y1="88" x2="480.0" y2="436" stroke="#8a94a3" stroke-width="0.8" stroke-dasharray="2 4"/>
+<text x="480.0" y="84" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1f2933" >4</text>
+<line x1="546.0" y1="88" x2="546.0" y2="436" stroke="#8a94a3" stroke-width="0.8" stroke-dasharray="2 4"/>
+<text x="546.0" y="84" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1f2933" >5</text>
+<line x1="612.0" y1="88" x2="612.0" y2="436" stroke="#8a94a3" stroke-width="0.8" stroke-dasharray="2 4"/>
+<text x="612.0" y="84" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1f2933" >6</text>
+<line x1="678.0" y1="88" x2="678.0" y2="436" stroke="#8a94a3" stroke-width="0.8" stroke-dasharray="2 4"/>
+<text x="678.0" y="84" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1f2933" >7</text>
+<line x1="744.0" y1="88" x2="744.0" y2="436" stroke="#8a94a3" stroke-width="0.8" stroke-dasharray="2 4"/>
+<text x="744.0" y="84" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1f2933" >8</text>
+<line x1="810.0" y1="88" x2="810.0" y2="436" stroke="#8a94a3" stroke-width="0.8" stroke-dasharray="2 4"/>
+<text x="810.0" y="84" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1f7a3a" >9</text>
+<line x1="942.0" y1="88" x2="942.0" y2="436" stroke="#8a94a3" stroke-width="0.8" stroke-dasharray="2 4"/>
+<text x="942.0" y="84" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1f7a3a" >E0′</text>
+<line x1="216.0" y1="464" x2="810.0" y2="464" stroke="#1f7a3a" stroke-width="1.6"/>
+<line x1="216.0" y1="458" x2="216.0" y2="470" stroke="#1f7a3a" stroke-width="1.6"/><line x1="810.0" y1="458" x2="810.0" y2="470" stroke="#1f7a3a" stroke-width="1.6"/>
+<text x="513.0" y="456" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#1f7a3a" >9 rising edges: start sampled (E0, 55 ns) → done, q, p valid (edge 9, 145 ns)</text>
+<text x="40" y="498" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#1f2933" >E0: start sampled at 55 ns.  Edge 9: done rises, q = 4, p = 1 (145 ns).  done stays high until the next start is sampled.</text>
+<text x="40" y="518" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#1f2933" >E0′ (165 ns): next start sampled; done falls and q, p clear to 0x00. The same 9-edge latency repeats (done at 255 ns).</text>
+<text x="40" y="538" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="normal" fill="#1f2933" >Divisor = 0 (55 ÷ 0) behaves differently: q = 0x00 and p = 0x37 (= x) on the sampling edge, and done stays high.</text>
+</svg>

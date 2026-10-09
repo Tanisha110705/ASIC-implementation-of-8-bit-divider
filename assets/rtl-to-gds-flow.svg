@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="660" viewBox="0 0 1160 660" role="img" aria-labelledby="t d">
+<title id="t">RTL-to-GDSII flow for eight_bit_divider with evidence status</title>
+<desc id="d">Stages from Verilog RTL through simulation, Genus synthesis, gate-level simulation, Conformal LEC, Innovus floorplan, placement, CTS and routing, RC extraction and Tempus STA with ECO. Solid stages have evidence in the repository, amber stages have evidence with open issues, dashed stages have no evidence.</desc>
+<defs>
+  <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606d"/></marker>
+  <style>
+    text{font-family:Helvetica,Arial,sans-serif;fill:#1f2933}
+    .h{font-size:18px;font-weight:bold}
+    .s{font-size:12px;fill:#52606d}
+    .b{font-size:14px;font-weight:bold}
+    .x{font-size:11.5px;fill:#323f4b}
+    .g{font-size:12px;font-weight:bold;fill:#52606d;letter-spacing:1px}
+    .ok{fill:#ecfdf3;stroke:#15803d;stroke-width:2}
+    .warn{fill:#fff7ed;stroke:#b45309;stroke-width:2}
+    .na{fill:#f5f7fa;stroke:#9aa5b1;stroke-width:1.6;stroke-dasharray:6 4}
+    .w{fill:none;stroke:#52606d;stroke-width:1.6}
+    .wd{fill:none;stroke:#9aa5b1;stroke-width:1.6;stroke-dasharray:6 4}
+    .lane{fill:#fafbfc;stroke:#e4e7eb;stroke-width:1}
+  </style>
+</defs>
+<rect width="1160" height="660" fill="#ffffff"/>
+<text x="580" y="32" class="h" text-anchor="middle">eight_bit_divider: RTL-to-GDSII flow and evidence status</text>
+<text x="580" y="52" class="s" text-anchor="middle">Cadence tools on a 45 nm generic PDK (gsclib045 / gpdk045 files named in the scripts). Each value is traced to its source file in docs/results.md.</text>
+
+<!-- lanes -->
+<rect x="15" y="68" width="1130" height="160" rx="6" class="lane"/>
+<text x="28" y="88" class="g">FRONT END</text>
+<rect x="15" y="240" width="1130" height="160" rx="6" class="lane"/>
+<text x="28" y="260" class="g">PHYSICAL IMPLEMENTATION — CADENCE INNOVUS 21.15</text>
+<rect x="15" y="412" width="1130" height="160" rx="6" class="lane"/>
+<text x="28" y="432" class="g">SIGN-OFF</text>
+
+<!-- Front end row -->
+<rect x="30" y="100" width="170" height="112" rx="6" class="ok"/>
+<text x="115" y="124" class="b" text-anchor="middle">RTL</text>
+<text x="115" y="144" class="x" text-anchor="middle">rtl/divider.v</text>
+<text x="115" y="160" class="x" text-anchor="middle">eight_bit_divider</text>
+<text x="115" y="176" class="x" text-anchor="middle">3-state FSM, 8-bit</text>
+<text x="115" y="192" class="x" text-anchor="middle">restoring datapath</text>
+
+<rect x="225" y="100" width="200" height="112" rx="6" class="ok"/>
+<text x="325" y="124" class="b" text-anchor="middle">RTL simulation</text>
+<text x="325" y="144" class="x" text-anchor="middle">ModelSim, Xcelium: 6 directed</text>
+<text x="325" y="160" class="x" text-anchor="middle">IMC coverage: 82.9 % overall</text>
+<text x="325" y="176" class="x" text-anchor="middle">Icarus: 65,536 pairs,</text>
+<text x="325" y="192" class="x" text-anchor="middle">self-checking, PASS</text>
+
+<rect x="450" y="100" width="210" height="112" rx="6" class="ok"/>
+<text x="555" y="124" class="b" text-anchor="middle">Synthesis — Genus 21.14</text>
+<text x="555" y="144" class="x" text-anchor="middle">1000 ps: slack +309 ps</text>
+<text x="555" y="160" class="x" text-anchor="middle">500 ps: slack 0 ps (met)</text>
+<text x="555" y="176" class="x" text-anchor="middle">163 / 179 cells, clock gating</text>
+<text x="555" y="192" class="x" text-anchor="middle">netlist, SDC, SDF</text>
+
+<rect x="685" y="100" width="210" height="112" rx="6" class="ok"/>
+<text x="790" y="124" class="b" text-anchor="middle">Gate-level simulation</text>
+<text x="790" y="144" class="x" text-anchor="middle">Xcelium + SDF (MAXIMUM)</text>
+<text x="790" y="160" class="x" text-anchor="middle">6/6 directed results correct</text>
+<text x="790" y="176" class="x" text-anchor="middle">clk→done 47 ps</text>
+<text x="790" y="192" class="x" text-anchor="middle">clk→q/p 125 ps</text>
+
+<rect x="920" y="100" width="210" height="112" rx="6" class="ok"/>
+<text x="1025" y="124" class="b" text-anchor="middle">Equivalence — Conformal</text>
+<text x="1025" y="144" class="x" text-anchor="middle">fv_map (golden) vs</text>
+<text x="1025" y="160" class="x" text-anchor="middle">final netlist (revised)</text>
+<text x="1025" y="176" class="x" text-anchor="middle">64/64 EQ (17 PO + 47 DFF)</text>
+<text x="1025" y="192" class="x" text-anchor="middle">PASS</text>
+
+<path d="M200,156 L225,156" class="w" marker-end="url(#ar)"/>
+<path d="M425,156 L450,156" class="w" marker-end="url(#ar)"/>
+<path d="M660,156 L685,156" class="w" marker-end="url(#ar)"/>
+<path d="M895,156 L920,156" class="w" marker-end="url(#ar)"/>
+
+<!-- netlist down to PD -->
+<path d="M555,212 L555,232 L115,232 L115,272" class="w" marker-end="url(#ar)"/>
+<text x="300" y="228" class="s">divider_netlist.v + divider_sdc.sdc → mmmc.tcl</text>
+
+<!-- PD row -->
+<rect x="30" y="272" width="200" height="112" rx="6" class="ok"/>
+<text x="130" y="296" class="b" text-anchor="middle">Floorplan + power</text>
+<text x="130" y="316" class="x" text-anchor="middle">core util 0.6, rings M10/M11</text>
+<text x="130" y="332" class="x" text-anchor="middle">M10 stripes, route_special</text>
+<text x="130" y="348" class="x" text-anchor="middle">floorplan_CUI.tcl</text>
+<text x="130" y="364" class="x" text-anchor="middle">layout capture</text>
+
+<rect x="255" y="272" width="200" height="112" rx="6" class="ok"/>
+<text x="355" y="296" class="b" text-anchor="middle">Placement</text>
+<text x="355" y="316" class="x" text-anchor="middle">place_opt_design, tie cells</text>
+<text x="355" y="332" class="x" text-anchor="middle">304 placed, 0 unplaced</text>
+<text x="355" y="348" class="x" text-anchor="middle">density 47.33 %</text>
+<text x="355" y="364" class="x" text-anchor="middle">pre-CTS setup WNS −0.206 ns</text>
+
+<rect x="480" y="272" width="200" height="112" rx="6" class="ok"/>
+<text x="580" y="296" class="b" text-anchor="middle">Clock tree synthesis</text>
+<text x="580" y="316" class="x" text-anchor="middle">ccopt_design + opt_design</text>
+<text x="580" y="332" class="x" text-anchor="middle">post-opt setup WNS −0.000 ns</text>
+<text x="580" y="348" class="x" text-anchor="middle">post-opt hold WNS −0.009 ns</text>
+<text x="580" y="364" class="x" text-anchor="middle">cts_CUI.tcl</text>
+
+<rect x="705" y="272" width="200" height="112" rx="6" class="warn"/>
+<text x="805" y="296" class="b" text-anchor="middle">Routing</text>
+<text x="805" y="316" class="x" text-anchor="middle">check_drc 0, connectivity 0</text>
+<text x="805" y="332" class="x" text-anchor="middle">die 59.6 × 55.67 µm</text>
+<text x="805" y="348" class="x" text-anchor="middle">post-opt: setup −0.044 ns,</text>
+<text x="805" y="364" class="x" text-anchor="middle">hold −0.030 ns; route_CUI.tcl</text>
+
+<rect x="930" y="272" width="200" height="112" rx="6" class="ok"/>
+<text x="1030" y="296" class="b" text-anchor="middle">RC extraction</text>
+<text x="1030" y="316" class="x" text-anchor="middle">extract_rc, IQuantus (RCgen)</text>
+<text x="1030" y="332" class="x" text-anchor="middle">490 nets, 5018 R,</text>
+<text x="1030" y="348" class="x" text-anchor="middle">5516 C, 312 coupling C</text>
+<text x="1030" y="364" class="x" text-anchor="middle">divider.spef</text>
+
+<path d="M230,328 L255,328" class="w" marker-end="url(#ar)"/>
+<path d="M455,328 L480,328" class="w" marker-end="url(#ar)"/>
+<path d="M680,328 L705,328" class="w" marker-end="url(#ar)"/>
+<path d="M905,328 L930,328" class="w" marker-end="url(#ar)"/>
+
+<path d="M1030,384 L1030,404 L130,404 L130,444" class="w" marker-end="url(#ar)"/>
+<text x="420" y="400" class="s">netlist + DEF + SDC + SPEF (final database, die 57.6 × 57.38 µm)</text>
+
+<!-- Signoff row -->
+<rect x="30" y="444" width="250" height="112" rx="6" class="warn"/>
+<text x="155" y="468" class="b" text-anchor="middle">STA — Tempus 22.11</text>
+<text x="155" y="488" class="x" text-anchor="middle">setup: 115 paths, 0 failing</text>
+<text x="155" y="504" class="x" text-anchor="middle">hold: 33 failing (WNS −0.150 ns)</text>
+<text x="155" y="520" class="x" text-anchor="middle">→ 2 repeater ECOs → 0 failing</text>
+<text x="155" y="536" class="x" text-anchor="middle">but WNS still shown −0.013 ns</text>
+
+<rect x="305" y="444" width="250" height="112" rx="6" class="ok"/>
+<text x="430" y="468" class="b" text-anchor="middle">Innovus ECO + checks</text>
+<text x="430" y="488" class="x" text-anchor="middle">place_eco / route_eco</text>
+<text x="430" y="504" class="x" text-anchor="middle">check_drc: 0 violations</text>
+<text x="430" y="520" class="x" text-anchor="middle">check_connectivity: 0</text>
+<text x="430" y="536" class="x" text-anchor="middle">(Innovus checks, not foundry DRC)</text>
+
+<rect x="580" y="444" width="260" height="112" rx="6" class="na"/>
+<text x="710" y="468" class="b" text-anchor="middle" style="fill:#52606d">Physical sign-off</text>
+<text x="710" y="488" class="x" text-anchor="middle" style="fill:#52606d">foundry-deck DRC / LVS</text>
+<text x="710" y="504" class="x" text-anchor="middle" style="fill:#52606d">(Pegasus / PVS / Calibre)</text>
+<text x="710" y="520" class="x" text-anchor="middle" style="fill:#52606d">post-route power, IR drop</text>
+<text x="710" y="536" class="x" text-anchor="middle" style="fill:#52606d">NO EVIDENCE</text>
+
+<rect x="865" y="444" width="265" height="112" rx="6" class="na"/>
+<text x="997" y="468" class="b" text-anchor="middle" style="fill:#52606d">GDSII export</text>
+<text x="997" y="488" class="x" text-anchor="middle" style="fill:#52606d">write_stream / .gds file</text>
+<text x="997" y="504" class="x" text-anchor="middle" style="fill:#52606d">not in scripts or captures</text>
+<text x="997" y="520" class="x" text-anchor="middle" style="fill:#52606d">flow stops at routed DB</text>
+<text x="997" y="536" class="x" text-anchor="middle" style="fill:#52606d">NO EVIDENCE</text>
+
+<path d="M280,500 L305,500" class="w" marker-end="url(#ar)"/>
+<path d="M555,500 L580,500" class="wd" marker-end="url(#ar)"/>
+<path d="M840,500 L865,500" class="wd" marker-end="url(#ar)"/>
+
+<!-- legend -->
+<rect x="30" y="592" width="22" height="16" rx="3" class="ok"/>
+<text x="60" y="605" class="s">Performed; reports/screenshots in repo</text>
+<rect x="320" y="592" width="22" height="16" rx="3" class="warn"/>
+<text x="350" y="605" class="s">Performed; evidence incomplete or inconsistent (see docs)</text>
+<rect x="700" y="592" width="22" height="16" rx="3" class="na"/>
+<text x="730" y="605" class="s">Not performed or no evidence in repo</text>
+<text x="30" y="636" class="s">Not shown: an earlier Genus study on a different RTL (divider_registers_8bit; 650 ps, clock gating, PLE) — kept as legacy reports only.</text>
+</svg>

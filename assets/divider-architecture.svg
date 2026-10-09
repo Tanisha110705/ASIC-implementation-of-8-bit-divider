@@ -1,0 +1,183 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="720" viewBox="0 0 1160 720" role="img" aria-labelledby="t d">
+<title id="t">eight_bit_divider architecture: FSM controller and restoring-division datapath</title>
+<desc id="d">Three-state FSM (IDLE, DIVIDE, DONE) controls a datapath of registers a, b, c and count, a 9-bit subtractor and a restore multiplexer. Outputs q, p and done are registered. Derived from rtl/divider.v.</desc>
+<defs>
+  <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f2933"/></marker>
+  <marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1d4e89"/></marker>
+  <marker id="ao" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b45309"/></marker>
+  <style>
+    text{font-family:Helvetica,Arial,sans-serif;fill:#1f2933}
+    .h{font-size:18px;font-weight:bold}
+    .s{font-size:12px;fill:#52606d}
+    .b{font-size:14px;font-weight:bold}
+    .m{font-family:Menlo,Consolas,monospace;font-size:12px}
+    .ms{font-family:Menlo,Consolas,monospace;font-size:11px;fill:#52606d}
+    .st{fill:#eef3f9;stroke:#1d4e89;stroke-width:2}
+    .rg{fill:#fff7ed;stroke:#b45309;stroke-width:1.8}
+    .lg{fill:#f0fdf4;stroke:#15803d;stroke-width:1.8}
+    .pn{fill:none;stroke:#cbd2d9;stroke-width:1.2;stroke-dasharray:5 4}
+    .w{fill:none;stroke:#1f2933;stroke-width:1.5}
+    .c{fill:none;stroke:#b45309;stroke-width:1.5;stroke-dasharray:6 3}
+    .t{fill:none;stroke:#1d4e89;stroke-width:1.6}
+  </style>
+</defs>
+<rect width="1160" height="720" fill="#ffffff"/>
+<text x="580" y="32" class="h" text-anchor="middle">eight_bit_divider — FSM controller + radix-2 restoring-division datapath</text>
+<text x="580" y="52" class="s" text-anchor="middle">Derived from rtl/divider.v. One always block on posedge clk / posedge rst (asynchronous, active-high reset). 48 declared flop bits; 47 after synthesis (c[8] is constant 0).</text>
+
+<!-- ============ FSM panel ============ -->
+<rect x="20" y="70" width="440" height="630" rx="8" class="pn"/>
+<text x="40" y="96" class="b">Controller: state[1:0]</text>
+<text x="40" y="114" class="ms">IDLE = 2'b00   DIVIDE = 2'b01   DONE = 2'b10</text>
+
+<!-- reset arrow -->
+<text x="70" y="160" class="m">rst</text>
+<path d="M95,165 L140,190" class="t" marker-end="url(#ab)"/>
+
+<!-- IDLE -->
+<circle cx="180" cy="220" r="44" class="st"/>
+<text x="180" y="216" class="b" text-anchor="middle">IDLE</text>
+<text x="180" y="234" class="ms" text-anchor="middle">done ← 0</text>
+<!-- DIVIDE -->
+<circle cx="180" cy="470" r="50" class="st"/>
+<text x="180" y="466" class="b" text-anchor="middle">DIVIDE</text>
+<text x="180" y="484" class="ms" text-anchor="middle">8 iterations</text>
+<!-- DONE -->
+<circle cx="370" cy="345" r="46" class="st"/>
+<text x="370" y="341" class="b" text-anchor="middle">DONE</text>
+<text x="370" y="359" class="ms" text-anchor="middle">done ← 1</text>
+
+<!-- IDLE self loop -->
+<path d="M150,186 C120,140 240,140 210,186" class="t" marker-end="url(#ab)"/>
+<text x="180" y="138" class="ms" text-anchor="middle">!start</text>
+
+<!-- IDLE -> DIVIDE -->
+<path d="M165,262 L165,418" class="t" marker-end="url(#ab)"/>
+<text x="40" y="320" class="m">start &amp;&amp;</text>
+<text x="40" y="336" class="m">y != 0</text>
+<text x="40" y="354" class="ms">a←x, b←y, c←0,</text>
+<text x="40" y="368" class="ms">count←0, q,p←0</text>
+
+<!-- IDLE -> DONE -->
+<path d="M220,240 L330,315" class="t" marker-end="url(#ab)"/>
+<text x="178" y="300" class="m">start &amp;&amp; y == 0</text>
+<text x="178" y="315" class="ms">q←0, p←x</text>
+
+<!-- DIVIDE self loop -->
+<path d="M140,505 C100,580 260,580 220,505" class="t" marker-end="url(#ab)"/>
+<text x="180" y="592" class="m" text-anchor="middle">count &lt; 8</text>
+<text x="180" y="607" class="ms" text-anchor="middle">shift / subtract / restore, count+1</text>
+
+<!-- DIVIDE -> DONE -->
+<path d="M225,448 L328,370" class="t" marker-end="url(#ab)"/>
+<text x="268" y="440" class="m">count == 8</text>
+<text x="268" y="455" class="ms">q←a, p←c[7:0]</text>
+
+<!-- DONE -> DIVIDE -->
+<path d="M352,388 C330,470 280,490 232,482" class="t" marker-end="url(#ab)"/>
+<text x="300" y="505" class="m">start &amp;&amp; y != 0</text>
+<text x="300" y="520" class="ms">(reload, done←0)</text>
+
+<!-- DONE self loop -->
+<path d="M345,306 C320,250 420,250 395,306" class="t" marker-end="url(#ab)"/>
+<text x="370" y="232" class="ms" text-anchor="middle">!start: hold q, p</text>
+<text x="370" y="246" class="ms" text-anchor="middle">start &amp;&amp; y==0: q←0, p←x</text>
+
+<text x="40" y="650" class="s">IDLE is reached only from reset; after the first</text>
+<text x="40" y="666" class="s">operation the FSM alternates DONE ↔ DIVIDE.</text>
+<text x="40" y="686" class="s">start is ignored while in DIVIDE.</text>
+
+<!-- ============ Datapath panel ============ -->
+<rect x="480" y="70" width="660" height="630" rx="8" class="pn"/>
+<text x="500" y="96" class="b">Datapath (one quotient bit per DIVIDE cycle)</text>
+
+<!-- inputs -->
+<text x="500" y="140" class="m">x[7:0]</text>
+<text x="500" y="250" class="m">y[7:0]</text>
+<path d="M552,136 L600,136" class="w" marker-end="url(#ar)"/>
+<path d="M552,246 L600,246" class="w" marker-end="url(#ar)"/>
+
+<!-- a register -->
+<rect x="600" y="115" width="170" height="44" rx="4" class="rg"/>
+<text x="685" y="134" class="b" text-anchor="middle">a[7:0]</text>
+<text x="685" y="150" class="ms" text-anchor="middle">dividend → quotient</text>
+<!-- b register -->
+<rect x="600" y="225" width="170" height="44" rx="4" class="rg"/>
+<text x="685" y="244" class="b" text-anchor="middle">b[7:0]</text>
+<text x="685" y="260" class="ms" text-anchor="middle">divisor (held)</text>
+<!-- c register -->
+<rect x="600" y="335" width="170" height="44" rx="4" class="rg"/>
+<text x="685" y="354" class="b" text-anchor="middle">c[8:0]</text>
+<text x="685" y="370" class="ms" text-anchor="middle">partial remainder</text>
+<!-- count -->
+<rect x="600" y="445" width="170" height="44" rx="4" class="rg"/>
+<text x="685" y="464" class="b" text-anchor="middle">count[3:0]</text>
+<text x="685" y="480" class="ms" text-anchor="middle">0 … 8</text>
+
+<!-- shift logic -->
+<rect x="830" y="300" width="190" height="54" rx="4" class="lg"/>
+<text x="925" y="320" class="b" text-anchor="middle">shift</text>
+<text x="925" y="336" class="ms" text-anchor="middle">{c[7:0], a[7]}</text>
+<text x="925" y="349" class="ms" text-anchor="middle">a ← {a[6:0], 0}</text>
+<path d="M770,137 L800,137 L800,316 L830,316" class="w" marker-end="url(#ar)"/>
+<text x="806" y="200" class="ms">a[7]</text>
+<path d="M770,357 L800,357 L800,338 L830,338" class="w" marker-end="url(#ar)"/>
+
+<!-- subtractor -->
+<rect x="830" y="395" width="190" height="54" rx="4" class="lg"/>
+<text x="925" y="418" class="b" text-anchor="middle">9-bit subtract</text>
+<text x="925" y="436" class="ms" text-anchor="middle">shifted − {0, b}</text>
+<path d="M925,354 L925,395" class="w" marker-end="url(#ar)"/>
+<path d="M770,247 L815,247 L815,425 L830,425" class="w" marker-end="url(#ar)"/>
+
+<!-- restore mux -->
+<rect x="830" y="490" width="190" height="66" rx="4" class="lg"/>
+<text x="925" y="512" class="b" text-anchor="middle">restore select</text>
+<text x="925" y="528" class="ms" text-anchor="middle">diff[8]=1: c←shifted, a[0]←0</text>
+<text x="925" y="544" class="ms" text-anchor="middle">diff[8]=0: c←diff,   a[0]←1</text>
+<path d="M925,449 L925,490" class="w" marker-end="url(#ar)"/>
+<text x="932" y="474" class="ms">diff, sign = diff[8]</text>
+
+<!-- feedback to a and c -->
+<path d="M830,523 L790,523 L790,367 L770,367" class="w" marker-end="url(#ar)"/>
+<path d="M1020,523 L1050,523 L1050,104 L685,104 L685,115" class="w" marker-end="url(#ar)"/>
+<text x="1044" y="230" class="ms" text-anchor="end">a[0] = quotient bit</text>
+
+<!-- count increment -->
+<path d="M770,467 L800,467 L800,505 L770,505 L770,489" class="w"/>
+<text x="806" y="500" class="ms">+1</text>
+
+<!-- output registers -->
+<rect x="600" y="590" width="110" height="44" rx="4" class="rg"/>
+<text x="655" y="610" class="b" text-anchor="middle">q[7:0]</text>
+<text x="655" y="626" class="ms" text-anchor="middle">quotient</text>
+<rect x="730" y="590" width="110" height="44" rx="4" class="rg"/>
+<text x="785" y="610" class="b" text-anchor="middle">p[7:0]</text>
+<text x="785" y="626" class="ms" text-anchor="middle">remainder</text>
+<rect x="860" y="590" width="110" height="44" rx="4" class="rg"/>
+<text x="915" y="610" class="b" text-anchor="middle">done</text>
+<text x="915" y="626" class="ms" text-anchor="middle">result valid</text>
+<path d="M620,159 L620,180 L580,180 L580,612 L600,612" class="w" marker-end="url(#ar)"/>
+<text x="540" y="560" class="ms">a → q</text>
+<path d="M640,379 L640,400 L590,400 L590,575 L765,575 L765,590" class="w" marker-end="url(#ar)"/>
+<text x="680" y="570" class="ms">c[7:0] → p</text>
+<path d="M655,634 L655,665" class="w" marker-end="url(#ar)"/>
+<path d="M785,634 L785,665" class="w" marker-end="url(#ar)"/>
+<path d="M915,634 L915,665" class="w" marker-end="url(#ar)"/>
+<text x="655" y="682" class="m" text-anchor="middle">q</text>
+<text x="785" y="682" class="m" text-anchor="middle">p</text>
+<text x="915" y="682" class="m" text-anchor="middle">done</text>
+
+<!-- control from FSM -->
+<path d="M460,470 L600,470" class="c" marker-end="url(#ao)"/>
+<text x="470" y="462" class="ms" style="fill:#b45309">count &lt; 8</text>
+<path d="M460,290 L600,290" class="c" marker-end="url(#ao)"/>
+<text x="470" y="282" class="ms" style="fill:#b45309">load / y == 0</text>
+
+<!-- legend -->
+<rect x="1000" y="590" width="14" height="14" class="rg"/><text x="1020" y="602" class="ms">register</text>
+<rect x="1000" y="612" width="14" height="14" class="lg"/><text x="1020" y="624" class="ms">combinational</text>
+<path d="M1000,644 L1014,644" class="c"/><text x="1020" y="648" class="ms">FSM control</text>
+<text x="1000" y="672" class="ms">Latency: 9 edges</text>
+<text x="1000" y="686" class="ms">start-sample → done</text>
+</svg>
